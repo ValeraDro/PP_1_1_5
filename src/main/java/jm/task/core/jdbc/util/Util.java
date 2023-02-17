@@ -12,12 +12,11 @@ public class Util {
 
     public static Connection getConnection() {
         Connection connection = null;
-        try{
+        try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Connection succesfull!");
-        }
-        catch(SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("Connection failed...");
         }
