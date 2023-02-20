@@ -73,19 +73,4 @@ public class Util {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
-
-    public static Connection getConnection() {
-
-        Connection connection = null;
-
-        try {
-            Class.forName(DRIVER);
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            System.out.println("Connection succesfull!");
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Connection failed...");
-        }
-        return connection;
-    }
 }
